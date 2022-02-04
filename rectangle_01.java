@@ -39,7 +39,7 @@ class Circle
   // Do the bounding test
   public boolean IsBounding(int x, int y)
   {
-    double pythag_distance = Math.pow(x,2) + Math.pow(y,2);
+    double pythag_distance = Math.pow((x - this.center_x),2) + Math.pow((y - this.center_y),2);
     if (pythag_distance < Math.pow(this.radius,2)) {
       return true;
     }
