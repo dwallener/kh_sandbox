@@ -14,5 +14,6 @@ The Java version should run like this...
 Some of the assumptions:
 
 - "Bounding" isn't defined. I did two versions - one which looks for twins, and one which looks for rectangles of the same dimensions but in different orientations. There are many ways to extend this - same area, all angles congruent, etc.
-- Coordinate system is in integers, and untested with negative coords.
+- Coordinate system is in integers, and untested with negative coords. It would be easy to move it all to floating point.
+- the unit tests dump to stdout, for easy of examination. for production code I would do it differently
 - 
