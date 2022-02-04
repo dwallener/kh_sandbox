@@ -1,7 +1,7 @@
 # kh_sandbox
 Miscellany
 
-I started writing this in Python, as that's where I'm most comfortable. With the basics done, I rewrote and extended in Java. I work on a Macbook, but I don't anticipate any issues running on Linux. Running on Windows is completely untested.
+I started writing this in Python, as that's where I'm most comfortable. With the basics done, I rewrote and extended in Java. I work on a Macbook, but I don't anticipate any issues running on Linux. Running on Windows is completely untested. I used version control from the start, so if you really want to see how this was built over time, the version history should be visible to you.
 
 The (incomplete) python version is executed with:
 
@@ -24,13 +24,15 @@ Some of the assumptions:
 - Coordinate system is in integers, and untested with negative coords. It would be easy to move it all to floating point.
 - The unit tests dump to stdout, for easy of examination. for production code I would do it differently.
 - Since I had to create a "universe" to add shapes to, I added very very basic (and computationally awful!) collision detection for rectangles. I didn't have time to create a unit test for this, but it is tested in "main".
+- The rectangles are only really tested in orthogonal orientations - all edges either vertical or horizontal
 - The requirement was for everything in one file, and I completed the requirements incrementally. This resulted in code that, really, needs to be refactored. 
-- From the requested features the following have been implemented for both Circle and Rectangle shapes:
-- - "object oriented"
-- - normal constructor and a copy constructor
-- - assignement operator, as an ".Assign" method because Java doesn't easily allow operator overloading
-- - equality operator, as an ".Equals" method because Java doesn't easily allow operator overloading
-- - checking if a point is inside or outside a shape
-- - methods for unit testing the class
+
+From the requested features the following have been implemented for both Circle and Rectangle shapes:
+- "object oriented"
+- normal constructor and a copy constructor
+- assignement operator, as an ".Assign" method because Java doesn't easily allow operator overloading
+- equality operator, as an ".Equals" method because Java doesn't easily allow operator overloading
+- checking if a point is inside or outside a shape
+- methods for unit testing the class
 
 
