@@ -43,22 +43,34 @@ class Rectangle:
             return False
 
     # this assumes "equal" means identical shapes - ie, same coordinates
-    def are_equal(self, shape_2):
+    def is_equal_to(self, shape_2):
         if self.min_x == shape_2.min_x and self.min_y == shape_2.min_y and self.max_x == shape_2.max_x and self.max_y == shape_2.max_y:
             return True
         else:
             return False
 
     # this assume "equal" means geometrically similar shapes
-    def are_similar(shape_1, shape_2):
-        pass
+    # this is only slightly less naive than the above, only tested for integer multiples
+    # of 90 degree rotations
+    def is_similar_to(self, shape_2):
+        # check the length of the x axis
+        self_distance_x = self.max_x - self.min_x
+        compare_distance_x = shape_2.max_x - shape_2.min_x
+        # check the length of the y axis
+        self_distance_y = self.max_y - self.min_y
+        compare_distance_y = shape_2.max_y - shape_2.min_y
+        # do the comparison
+        if self_distance_x == compare_distance_x and self_distance_y == compare_distance_y:
+            return True
+        elif self_distance_x == compare_distance_y and self_distance_y == compare_distance_x:
+            return True
+        else:
+            return False
 
 
-    def create_rectangle():
-        pass
+################################################################################
+# Start testing...
 
-    def copy_shape():
-        pass
 
 # now we construct a new rectangle
 shape_1 = Rectangle(0, 0, 100, 100)
@@ -97,7 +109,29 @@ shape_2.properties()
 shape_3.properties()
 
 # make two tests...
-if shape_1.is_equal(shape_2):
+if shape_1.is_equal_to(shape_2):
     print ("Two shapes are equal!")
 else:
     print ("Two shapes are not equal!")
+if shape_1.is_equal_to(shape_3):
+    print ("Two shapes are equal!")
+else:
+    print ("Two shapes are not equal!")
+
+# now test for similarity
+# first create a new shape that is 90 degrees rotated from one of the other shapes
+shape_4 = Rectangle(0, 0, 50, 100)
+shape_5 = Rectangle(0, 0, 100, 50)
+shape_4.properties()
+shape_5.properties()
+# do the test
+# this should fail...
+if shape_5.is_equal_to(shape_4):
+    print ("Two shapes are equal!")
+else:
+    print ("Two shapes are not equal!")
+# this should pass
+if shape_5.is_similar_to(shape_4):
+    print ("Two shapes are similar!")
+else:
+    print ("Two shapes are not similar!")
