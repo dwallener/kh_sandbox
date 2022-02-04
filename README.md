@@ -23,7 +23,7 @@ Some of the assumptions:
 
 - "Bounding" isn't defined. I did two versions - one which looks for twins, and one which looks for rectangles of the same dimensions but in different orientations. There are many ways to extend this - same area, all angles congruent (for non-rectangles), etc.
 - Coordinate system is in integers, and untested with negative coords. It would be easy to move it all to floating point.
-- The unit tests dump to stdout, for easy of examination. for production code I would do it differently.
+- The unit tests dump to stdout, for ease of examination. for production code I would do it differently.
 - Since I had to create a "universe" to add shapes to, I added very very basic (and computationally awful!) collision detection for rectangles. I didn't have time to create a unit test for this, but it is tested in "main".
 - The rectangles are only really tested in orthogonal orientations - all edges either vertical or horizontal
 - The requirement was for everything in one file, and I completed the requirements incrementally. This resulted in code that, really, needs to be refactored. 
