@@ -380,7 +380,7 @@ public class rectangle_01 {
       System.out.println("FAILED: Rectangle bounding tests");
     }
 
-    // Circt bounding test
+    // Circle bounding test
     // first method
     Circle circle_10 = new Circle(0,0,100);
     Circle circle_11 = new Circle(20, 20, 10);
@@ -481,7 +481,6 @@ public class rectangle_01 {
     } else {
       System.out.println("No Collision!");
     }
-
 
   }
 }
