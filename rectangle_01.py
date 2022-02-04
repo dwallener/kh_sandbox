@@ -68,6 +68,15 @@ class Rectangle:
         else:
             return False
 
+    # now let's see if we can do this by overloading the "=" or __EQ__ operator...
+
+    def __eq__(self, other):
+        if self.is_equal_to(other):
+            return True
+        else:
+            return False
+        pass
+
     # this assume "equal" means geometrically similar shapes
     # this is only slightly less naive than the above, only tested for integer multiples
     # of 90 degree rotations
@@ -95,7 +104,7 @@ class Rectangle:
 shape_1 = Rectangle(0, 0, 100, 100)
 # shape properties to sdout
 shape_1.properties()
-# copy the shape
+# copy construct the shape
 shape_2 = shape_1.make_a_copy()
 # test by sending properties to sdout
 shape_2.properties()
@@ -136,6 +145,18 @@ if shape_1.is_equal_to(shape_3):
     print ("Two shapes are equal!")
 else:
     print ("Two shapes are not equal!")
+
+# let's test the same thing with our overloaded "==" operator
+if shape_1 == shape_2:
+    print ("Two shapes are equal!")
+else:
+    print ("Two shapes are not equal!")
+if shape_1 == shape_3:
+    print ("Two shapes are equal!")
+else:
+    print ("Two shapes are not equal!")
+
+
 
 # now test for similarity
 # first create a new shape that is 90 degrees rotated from one of the other shapes
