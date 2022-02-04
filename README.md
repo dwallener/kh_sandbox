@@ -14,6 +14,7 @@ There are some features used that do require Python 3. The output should look li
 The Java version is built and executed with:
 
 `> javac rectangle_01.java`
+
 `> java rectangle_01`
 
 ![Screen Shot 2022-02-04 at 12 13 05 PM](https://user-images.githubusercontent.com/5768048/152596954-9e5942e0-8e61-438f-8b48-50ddcd310af7.png)
