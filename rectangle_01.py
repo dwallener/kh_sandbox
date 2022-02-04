@@ -1,9 +1,28 @@
 #!/Users/damir00/miniconda3/bin/python3
 
 # github personal access token
-# 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
+# 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
+
 
 import copy
+
+class Circle:
+
+    def __init__(self, center, radius):
+        self.center = (0,0)
+        self.radius = 10
+
+    def properties(self):
+        print (f"Center: {self.center} Radius: {self.radius}")
+
+    def is_bounding(self, x, y):
+        # this is not the most computationally efficient way, but it works
+        pythag = (x - self.center[0])**2 + (y - self.center[1])**2
+        if pythag < self.radius**2:
+            return True
+        else:
+            return False
+
 
 class Rectangle:
 
@@ -70,7 +89,7 @@ class Rectangle:
 
 ################################################################################
 # Start testing...
-
+# This is assuming all positive numbers in the coordinate system (I know, I know)
 
 # now we construct a new rectangle
 shape_1 = Rectangle(0, 0, 100, 100)
@@ -135,3 +154,19 @@ if shape_5.is_similar_to(shape_4):
     print ("Two shapes are similar!")
 else:
     print ("Two shapes are not similar!")
+
+# let's move on to the circle...
+
+circle_1 = Circle((0,0),10)
+circle_1.properties()
+# test it
+coords = (5,5)
+if circle_1.is_bounding(coords[0], coords[1]):
+    print (f"The point {coords} is inside the circle")
+else:
+    print (f"The point {coords} is outside the circle")
+coords = (20,20)
+if circle_1.is_bounding(coords[0], coords[1]):
+    print (f"The point {coords} is inside the circle")
+else:
+    print (f"The point {coords} is outside the circle")
